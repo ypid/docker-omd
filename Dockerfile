@@ -25,8 +25,8 @@ RUN omd config default set TMPFS off
 RUN omd config default set APACHE_TCP_ADDR 0.0.0.0
 
 # Add watchdog script
-ADD watchdog.sh /opt/omd/watchdog.sh
+ADD entrypoint.sh /entrypoint.sh
 
 # Set up runtime options
 EXPOSE 5000
-ENTRYPOINT ["/opt/omd/watchdog.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
